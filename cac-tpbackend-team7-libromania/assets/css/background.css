@@ -1,0 +1,7 @@
+/*Edicion del fondo de pagina*/
+
+.back-design
+{
+    background: linear-gradient(60deg,rgb(224, 216, 176),#333);
+    filter: brightness(0.9);
+}

@@ -1,0 +1,160 @@
+/*Estructura del main*/
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/*--------------------------*/
+#catalogo {
+    display: flex;
+    flex-direction: column;
+    border: 0 0 5px 0;
+    border-style: inset;
+    height: auto;
+}
+
+.cards-catalogo {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* Cambiar a column para dividir en filas */
+    justify-content: center;
+
+    gap: 20px;
+    /* Reduzco el espacio entre las filas */
+    margin: 20px;
+}
+
+/*--------------------------*/
+#clientes {
+    margin-bottom: 20px;
+}
+
+/*--------------------------*/
+#contacto {
+    background-color: var(#ccc);
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#contacto img {
+    max-width: 60%;
+    object-fit: fill;
+}
+
+#contacto div {
+    margin: 5px 20px;
+    padding: 0;
+}
+
+/*Edicion del contenido*/
+/*class = text-content*/
+.text-content h2 {
+    margin-top: 5px;
+    text-align: center;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 32px;
+    /* Fuente titulo */
+}
+
+.text-content p {
+    margin: 10px 5px;
+    text-align: center;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 24px;
+    /* Fuente parrafo */
+}
+
+/*Botón Estamos aqui para tí (registro)*/
+.text-content {
+    text-align: center;
+}
+
+.text-content .btn-registro {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: rgb(40, 40, 40); 
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none; 
+    transition: background-color 0.3s;
+}
+
+.text-content .btn-registro:hover {
+    background-color:black; 
+}
+
+.text-content .btn-registro:active {
+    background-color: black; 
+    transform: scale(0.98); 
+}
+
+/*----------------------------------*/
+/*Medias*/
+/*----------------------------------*/
+
+/*Dispositivos móviles*/
+@media screen and (max-width: 600px) {
+    .cards-catalogo {
+        flex-direction: column;
+    }
+    #contacto {
+        flex-direction: column;
+    }
+    #contacto img {
+        max-width: 100%; 
+    }
+    .text-content h2 {
+        font-size: 24px; 
+    }
+    .text-content p {
+        font-size: 18px; 
+    }
+}
+
+/*Tabletas*/
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .cards-catalogo {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+    }
+    #contacto {
+        flex-direction: column; 
+    }
+    #contacto img {
+        max-width: 80%; 
+    }
+    .text-content h2 {
+        font-size: 28px; 
+    }
+    .text-content p {
+        font-size: 20px; 
+    }
+}
+
+/*PC escritorio*/
+@media only screen and (min-width: 1025px) {
+    .cards-catalogo {
+        flex-direction: row; 
+        flex-wrap: nowrap; 
+    }
+    #contacto {
+        flex-direction: row; 
+    }
+    #contacto img {
+        max-width: 60%; 
+    }
+    .text-content h2 {
+        font-size: 32px; 
+    }
+    .text-content p { 
+        font-size: 24px; 
+    }
+} 
+

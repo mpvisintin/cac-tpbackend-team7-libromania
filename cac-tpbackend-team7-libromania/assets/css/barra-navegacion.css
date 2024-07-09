@@ -1,0 +1,149 @@
+/*Configuracion para barra de navegacion superior e inferior*/
+/*Contiene los efectos para los botones*/
+
+#nav-bar {
+    position: sticky;
+    z-index: 100000;
+    /*Se garantiza que este siempre arriba*/
+    top: 0;
+    background-color: #333;
+}
+
+#footer-bar {
+    position: sticky;
+    background-color: #333;
+}
+
+/*Aqui esta el tamaño de fuente*/
+.bar { 
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    color: white;
+    font-size: 14px;
+}
+
+.bar div {
+    margin-left: 20px;
+}
+
+.bar div i {
+    margin-right: 20px;
+}
+
+.bar ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 20px;
+
+    padding: 3px;
+    /*Necesario para el efecto*/
+    overflow: hidden;
+
+}
+
+.bar ul li {
+    list-style-type: none;
+    padding: 0px;
+}
+
+/*----------------------------------------------------------------------------*/
+/*A partir de aca se hace todo lo relacionado a botones en barra de navegacion*/
+/*----------------------------------------------------------------------------*/
+.bar-btn
+
+/*Botones - En ancla barra de navegacion*/
+    {
+    margin-left: 20px;
+    /*Separacion entre contenidos*/
+    text-decoration: none;
+    text-align: center;
+
+    color: white;
+    /* Color de texto */
+
+    border-left: 2px inset white;
+    /*Bordes de la caja*/
+    border-right: 2px inset white;
+    border-radius: 5px;
+
+    overflow: hidden;
+    /*Oculta todo lo que quede por fuera -  Sirve para la animacion*/
+    margin: 2px 2px 2px 6px;
+    padding: 5px 10px;
+    position: relative;
+    /*Ajusta el posicionado - para que se "mueva" junto a las animaciones*/
+}
+
+.bar-btn::before {
+    content: "";
+    position: absolute;
+    /*Queda alineado con la caja del texto*/
+    width: 100%;
+    /*Asigna mis dimensiones del boton*/
+    height: 100%;
+    background: linear-gradient(#e66465, #9198e5);
+    /*Color del fondo*/
+    left: 0;
+    /*posicion del fondo editado*/
+    top: -100%;
+    /*Se va arriba de todo*/
+    border-radius: 75%;
+    transition: top 0.3s, border-radius 0.3s;
+    /*Transicion */
+    opacity: 0;
+    /*Con esto se oculta*/
+    z-index: -1;
+    /*Queda atras del contenido*/
+}
+
+.bar-btn:hover::before {
+    top: 0;
+    border-radius: 0%;
+    opacity: 100%;
+}
+
+/*----------------------------------*/
+/*Medias*/
+/*----------------------------------*/
+
+/*Dispositivos móviles*/
+@media screen and (max-width: 600px) {
+    .bar {
+        font-size: 10px;
+        height: 40px; 
+    }
+    .bar-btn {
+        padding: 4px 8px; 
+        font-size: 10px; /*Acomoda el tamaño de fuente - más de 10px, se empieza a deformar la estructura*/
+    }
+}
+
+/*Tabletas*/
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .bar {
+        font-size: 13px;
+        height: 45px; 
+    }
+    .bar-btn {
+        padding: 5px 9px; 
+        font-size: 13px; 
+    }
+}
+
+/*PC escritorio*/
+@media screen and (min-width: 1025px) {
+    .bar {
+        font-size: 14px;
+        height: 50px; 
+    }
+    .bar-btn {
+        padding: 5px 10px; 
+        font-size: 14px; 
+    }
+}

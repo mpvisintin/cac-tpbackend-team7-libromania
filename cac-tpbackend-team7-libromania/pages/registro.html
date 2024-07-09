@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <!--Favicon + GoogleFonts-->
+    <link rel="icon" href="../assets/img/librooo.ico">
+    <script src="https://kit.fontawesome.com/3edbfb76e6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15+Charted&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../assets/css/universal.css"> <!-- Configuracion universal -->
+
+    <link rel="stylesheet" href="../assets/css/index-main.css"> <!--Estructura Index-->
+
+    <link rel="stylesheet" href="../assets/css/background.css"> <!-- Fondo de pagina-->
+    <link rel="stylesheet" href="../assets/css/barra-navegacion.css"> <!-- Barra de navegacion -->
+
+    <link rel="stylesheet" href="../assets/css/footer-web.css"> <!-- Footer de la web -->
+
+    <link rel="stylesheet" href="../assets/css/footercac.css"> <!-- Footer CaC / TP -->
+
+    <link rel="stylesheet" href="../assets/css/registro.css"> <!--Formulario-->
+
+</head>
+
+<body class="back-design">
+
+    <nav id="nav-bar"> <!-- Barra de navegacion -->
+        <div class="bar">
+            <div>
+                <i class="fa-solid fa-book-open fa-bounce"></i>
+                <span>Libromania</span>
+            </div>
+
+            <ul>
+                <li><a class="bar-btn" href="../index.html">Principal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cuerpo web -->
+    <main>
+        <section class="form-cliente">
+            <h2>Registrate para comenzar a publicar con nosotros!</h2>
+
+            <div class="form-cliente" style="margin-bottom: 30px;">
+                <form action="registro.html" method="post">
+                    <div>
+                        <label for="nombreUsuario">Nombre</label>
+                        <input type="text" id="nombreUsuario" name="nombreUsuarioIngresado">
+                    </div>
+                    <div>
+                        <label for="apellidoUsuario">Apellido</label>
+                        <input type="text" id="apellidoUsuario" name="apellidoUsuarioIngresado">
+                    </div>
+                    <div>
+                        <label for="emailUsuario">Correo electronico</label>
+                        <input type="email" id="emailUsuario" name="emailUsuarioIngresado">
+                    </div>
+                    <div>
+                        <label for="contraseñaUsuario">Contraseña</label>
+                        <input type="password" id="contraseñaUsuario" name="contraseñaUsuarioIngresado" minlength="6"
+                            maxlength="12">
+                    </div>
+                    <div>
+                        <label for="tipoDeDocDelUsuario">Tipo de Documento</label>
+                        <select id="tipoDeDocDelUsuario" name="DocUsuarioIngresado">
+                            <option value="" selected>--Seleccione un tipo de Documento ---</option>
+                            <option value="DNI">DNI</option>
+                            <option value="PAS">Pasaporte</option>
+                            <option value="CUIT">CUIT</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="identificacionUsuario">Número</label>
+                        <input type="text" id="identificacionUsuario" name="identificacionUsuarioIngresado">
+                    </div>
+                    <div>
+                        <input type="checkbox" id="terminos" name="terminosCondiciones" value="1">
+                        <label for="terminos">Acepto términos y condiciones</label>
+                    </div>
+
+                    <input type="submit" value="REGISTRARSE" href="/index.html">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer-bar"> <!--Footer web-->
+            <div class="bar"> </div> <!--Que este vacio es algo deseado-->
+        </div>
+        <!--Footer para el curso-->
+        <div id="cac" class="footercac">
+            <div id="cac1">
+                <div>
+                    <p>Pagina con fines educativos <br> y de formacion en:<br></p>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <img src="../assets/img/languages.png" alt="codo a codo logo">
+            </div>
+
+            <div id="cac2">
+                <h3>Realizada por - grupo 7:</h3>
+                <ul>
+                    <li>Dario Bristot</li>
+                    <li>Rocio Gervasoni</li>
+                    <li>Maria Paz Visintin</li>
+                    <li>Giuliano Ivan Veliz</li>
+                </ul>
+            </div>
+
+            <div id="cac3">
+                <a href="https://buenosaires.gob.ar/educacion/codo-codo-40">
+                    <img src="../assets/img/CAClogo.png" alt="codo a codo logo">
+                </a>
+            </div>
+
+            <div id="cac4">
+                <p><br>Pagina con licencia GPL 3.0 para mas informacion <a
+                        href="https://www.gnu.org/licenses/gpl-3.0.html">click
+                        aqui</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<!--Script de validación para el formulario-->
+<script src="../assets/js/validacion.js"></script>

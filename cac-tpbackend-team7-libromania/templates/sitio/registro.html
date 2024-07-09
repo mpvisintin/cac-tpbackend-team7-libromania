@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <!--Favicon + GoogleFonts-->
+    <link rel="icon" href="../assets/img/librooo.ico">
+    <script src="https://kit.fontawesome.com/3edbfb76e6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15+Charted&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="../assets/css/universal.css"> <!-- Configuracion universal -->
+
+    <link rel="stylesheet" href="../assets/css/index-main.css"> <!--Estructura Index-->
+
+    <link rel="stylesheet" href="../assets/css/background.css"> <!-- Fondo de pagina-->
+    <link rel="stylesheet" href="../assets/css/barra-navegacion.css"> <!-- Barra de navegacion -->
+
+    <link rel="stylesheet" href="../assets/css/footer-web.css"> <!-- Footer de la web -->
+
+    <link rel="stylesheet" href="../assets/css/footercac.css"> <!-- Footer CaC / TP -->
+
+    <link rel="stylesheet" href="../assets/css/registro.css"> <!--Formulario-->
+
+</head>
+<style>
+    html{
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        scroll-behavior: smooth;
+        
+     }
+    /*Formulario*/
+
+.form-cliente {
+    margin: auto;
+    /*Solo para centrar el */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*------------*/
+
+h2 {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 32px;
+}
+
+
+form {
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-style: italic;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="submit"] {
+    background-color: rgb(40, 40, 40);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+
+}
+
+input[type="submit"]:hover {
+    background-color: black;
+}
+.sticky {
+    position: sticky;
+    top: 0; /* Ajusta el punto de anclaje según sea necesario */
+    z-index: 1000; /* Opcional: ajusta el z-index si es necesario */
+    background-color: #333; /* Opcional: ajusta el color de fondo */
+}
+
+/*----------------------------------*/
+/*Medias*/
+/*----------------------------------*/
+
+/*Dispositivos móviles*/
+@media screen and (max-width: 600px) {
+    .bar {
+        flex-direction: column;
+        height: auto;
+        font-size: 12px;
+    }
+
+    .bar div,
+    .bar ul {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .bar ul {
+        justify-content: center;
+    }
+
+    .bar-btn {
+        margin-left: 0;
+        margin: 2px;
+        padding: 5px;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        padding: 8px;
+    }
+
+    input[type="submit"] {
+        padding: 8px;
+    }
+}
+
+/*Tabletas*/
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .bar {
+        font-size: 13px;
+    }
+
+    .bar ul {
+        margin-right: 10px;
+    }
+
+    .bar-btn {
+        margin-left: 10px;
+        padding: 5px 8px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        padding: 9px;
+    }
+
+    input[type="submit"] {
+        padding: 9px;
+    }
+}
+
+/*PC Escritorio*/
+@media screen and (min-width: 1025px) {
+    .bar {
+        font-size: 16px;
+    }
+
+    .bar ul {
+        margin-right: 20px;
+    }
+
+    .bar-btn {
+        margin-left: 20px;
+        padding: 8px 16px;
+    }
+
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        padding: 12px;
+    }
+
+    input[type="submit"] {
+        padding: 12px;
+    }
+}
+.fuente{
+        font-family: "Shadows Into Light", cursive;
+    }
+    .back-design{
+        background: linear-gradient(60deg,rgb(224, 216, 176),#333);
+        filter: brightness(0.9);
+    }
+    /* footer */
+    /*Grillado y areas por separado*/
+
+.footercac {
+    display: grid;
+    grid-template-columns: 0.3fr 0.3fr 0.2fr 0.2fr;
+    grid-template-rows: 150px auto;
+    grid-template-areas:
+        "cac1 cac2 cac3 cac3"
+        "cac4 cac4 cac4 cac4";
+}
+
+#cac1 {
+    grid-area: cac1;
+}
+
+#cac2 {
+    grid-area: cac2;
+}
+
+#cac3 {
+    grid-area: cac3;
+}
+
+#cac4 {
+    grid-area: cac4;
+}
+
+/*-------------*/
+.footercac {
+    color: white;
+    background-color: #333;
+    margin: 0;
+    border-top: 2px solid red;
+}
+
+#cac1 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cac1 div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+    list-style-type: none;
+}
+
+#cac1 img {
+    margin: 5px 12px 12px 10px;
+    width: 100%;
+    height: 50%;
+}
+
+#cac2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+#cac2 ul {
+    list-style-type: none;
+    /* Quita los puntos de la lista */
+    margin: 10px;
+}
+
+#cac3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cac3 img {
+    width: 100%;
+    height: 100px;
+}
+
+#cac4 {
+    margin: 5px 0;
+    border-top: 2px solid red;
+}
+
+/*-------------*/
+
+.text-footer h1 {
+    font-size: 18px;
+}
+
+.text-footer li,
+p {
+    font-size: 16px;
+    margin: 2px;
+}
+
+
+/*----------------------------------*/
+/*Medias*/
+/*----------------------------------*/
+
+/*PC Escritorio*/
+@media only screen and (height: 1025px) {
+    .footercac {
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr;
+        grid-template-rows: 100px 100px 50px;
+        grid-template-areas:
+            "cac1 cac1"
+            "cac2 cac3"
+            "cac4 cac4";
+    }
+
+    #cac1 img {
+        margin: 2px 0 5px 0;
+        width: 100%;
+        height: 50%;
+    }
+
+
+    #cac3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #cac3 img {
+        margin: 0px 0px 2px 0px;
+        height: 90%;
+    }
+
+    #cac2,
+    #cac3 {
+        border-top: 2px solid red;
+    }
+
+    .text-footer h1 {
+        font-size: 14px;
+    }
+
+    .text-footer li,
+    p {
+        font-size: 12px;
+    }
+
+}
+
+/*Dispositivos móviles*/
+@media screen and (max-width: 600px) {
+    .footercac {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "cac1"
+            "cac2"
+            "cac3"
+            "cac4";
+    }
+
+    #cac1,
+    #cac2,
+    #cac3,
+    #cac4 {
+        margin-top: 10px;
+    }
+
+    #cac1 div {
+        flex-direction: column;
+    }
+
+    #cac1 img,
+    #cac3 img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+/* Media queries para tabletas */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .footercac {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "cac1 cac2"
+            "cac3 cac3"
+            "cac4 cac4";
+    }
+
+    #cac1,
+    #cac2,
+    #cac3,
+    #cac4 {
+        margin-top: 10px;
+    }
+
+    #cac1 div {
+        flex-direction: column;
+    }
+
+    #cac1 img,
+    #cac3 img {
+        width: 90%;
+        height: auto;
+    }
+}
+</style>
+<body class="back-design">
+
+    <!-- NAV -->
+    <nav class="sticky bg-[#333] w-screen text-white sticky top-0 z-50">
+        <div class="w-screen px-4 py-3 flex justify-between items-center">
+            <!-- LOGO -->
+            <div class="flex gap-x-4 items-center w-fit">
+                <i class="fa-solid fa-book-open"></i>
+                <p class="text-xl font-bold">Libromania</p>
+            </div>
+            <!-- LINKS -->
+            <div class=" text-[16px] md:flex hidden gap-x-4 items-center w-fit mr-5">
+                <a href="/" class="jober md:block hidden">
+                    Inicio
+                    <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span>
+                </a>
+                <a href="/#catalogo" class="jober md:block hidden">
+                    Catálogo
+                    <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span>
+                </a>
+                <a href="/#slider" class="jober md:block hidden">
+                    Autores en Foco
+                    <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span>
+                </a>
+                <a href="/#publica" class="jober md:block hidden">
+                    Publica con Nosotros
+                    <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span>
+                </a>
+                <a href="/registro" class="jober md:block hidden">
+                    Registrate
+                    <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span>
+                </a>
+            </div>
+            <!-- BOTON MENUS RESPONSIVO -->
+            <div class="flex md:hidden mr-2">
+                <!-- ICONO -->
+                <button id="mobile-menu-btn" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- MENU RESPONSIVO -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Inicio</a>
+                <a href="/#catalogo" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Catálogo</a>
+                <a href="/#slider" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Autores en Foco</a>
+                <a href="/#publica" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Publica con Nosotros</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cuerpo web -->
+    <main>
+        <section class="form-cliente">
+            <h2 class="text-[32px] font-medium py-8 leading-[35px]">Registrate para comenzar a publicar con nosotros!</h2>
+
+            <div class="form-cliente" style="margin-bottom: 30px;">
+                <form action="registro.html" method="post">
+                    <div>
+                        <label for="nombreUsuario">Nombre</label>
+                        <input type="text" id="nombreUsuario" name="nombreUsuarioIngresado">
+                    </div>
+                    <div>
+                        <label for="apellidoUsuario">Apellido</label>
+                        <input type="text" id="apellidoUsuario" name="apellidoUsuarioIngresado">
+                    </div>
+                    <div>
+                        <label for="emailUsuario">Correo electronico</label>
+                        <input type="email" id="emailUsuario" name="emailUsuarioIngresado">
+                    </div>
+                    <div>
+                        <label for="contraseñaUsuario">Contraseña</label>
+                        <input type="password" id="contraseñaUsuario" name="contraseñaUsuarioIngresado" minlength="6"
+                            maxlength="12">
+                    </div>
+                    <div>
+                        <label for="tipoDeDocDelUsuario">Tipo de Documento</label>
+                        <select id="tipoDeDocDelUsuario" name="DocUsuarioIngresado">
+                            <option value="" selected>--Seleccione un tipo de Documento ---</option>
+                            <option value="DNI">DNI</option>
+                            <option value="PAS">Pasaporte</option>
+                            <option value="CUIT">CUIT</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="identificacionUsuario">Número</label>
+                        <input type="text" id="identificacionUsuario" name="identificacionUsuarioIngresado">
+                    </div>
+                    <div>
+                        <input type="checkbox" id="terminos" name="terminosCondiciones" value="1">
+                        <label for="terminos">Acepto términos y condiciones</label>
+                    </div>
+
+                    <input type="submit" value="REGISTRARSE" href="/index.html">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-white bg-[#333]">
+        <div id="footer-bar" class="bar flex justify-between w-full"><!--Footer web-->
+            <div class="flex ml-5 gap-x-7 items-center py-3">
+                <i class="fa-solid fa-book-open"></i>
+                <p>Libromania</p>
+            </div>
+        </div>
+
+        <div id="cac" class="footercac text-footer"><!--Footer para el curso-->
+            <div id="cac1">
+                <h1 style="text-align: center;">Pagina con fines educativos <br> y de formacion.</h1>
+                <img src="img/languages.png" alt="html js css">
+            </div>
+            <div id="cac2" class="pt-5">
+                <h1>Realizada por - grupo 7:</h1>
+                <ul>
+                    <li>Dario Bristot</li>
+                    <li>Rocio Gervasoni</li>
+                    <li>Maria Paz Visintin</li>
+                    <li>Giuliano Ivan Veliz</li>
+                </ul>
+            </div>
+
+            <div id="cac3" class="">
+                <a href="https://buenosaires.gob.ar/educacion/codo-codo-40" class="">
+                    <img src="img/CAClogo.png" class="w-[50%] mx-auto" alt="codo a codo logo">
+                </a>
+            </div>
+
+            <div id="cac4" class="sm:text-left text-center">
+                <p class="sm:ml-5">
+                    <br>Pagina con licencia GPL 3.0 para mas informacion
+                    <a class="text-blue-500 underline" href="https://www.gnu.org/licenses/gpl-3.0.html">click
+                    aqui</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<!--Script de validación para el formulario-->
+<script>
+    /* resp nav */
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+            // ocultar menu
+            document.querySelector('.hidden.md\\:flex').classList.toggle('hidden');
+        });
+        //Validación del formulario de registro
+
+        function validarFormulario(event) {
+            event.preventDefault();
+            var nombre = document.getElementById('nombreUsuario').value;
+            var apellido = document.getElementById('apellidoUsuario').value;
+            var email = document.getElementById('emailUsuario').value;
+            var contraseña = document.getElementById('contraseñaUsuario').value;
+            var tipoDocumento = document.getElementById('tipoDeDocDelUsuario').value;
+            var numeroDocumento = document.getElementById('identificacionUsuario').value;
+            var terminos = document.getElementById('terminos').checked;
+
+            if (nombre === '' || apellido === '' || email === '' || contraseña === '' || tipoDocumento === '' || numeroDocumento === '' || !terminos) {
+                alert('Por favor, complete todos los campos y acepte los términos y condiciones.');
+            } else {
+                alert('Formulario enviado correctamente.');
+                window.location.href = '/'; //Nos dirige a la pagina de bienvenida, en desarrollo
+            }
+        }
+
+        window.onload = function() {
+            document.querySelector('form').addEventListener('submit', validarFormulario);
+        }
+</script>

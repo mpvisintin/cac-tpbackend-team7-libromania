@@ -1,0 +1,69 @@
+/*Edicion del banner*/
+
+.banner {
+    height: 50vh;
+    width: 100%;
+    background-image: url("../img/books.png");
+    /*Imagen banner*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner {
+    background-color: rgba(0, 0, 0, 1);
+    opacity: 0.8;
+}
+
+.banner h1 {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 700;
+    color: rgb(255, 250, 250);
+    font-size: 100px;
+
+    display: flex;
+    text-align: center;
+}
+
+
+
+/*----------------------------------*/
+/*Medias*/
+/*----------------------------------*/
+
+/*Dispositivos móviles*/
+@media screen and (max-width: 600px) {
+    .banner {
+        height: 30vh; 
+    }
+
+    .banner h1 {
+        font-size: 30px; 
+    }
+}
+
+/*Tabletas*/
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .banner {
+        height: 40vh; 
+    }
+
+    .banner h1 {
+        font-size: 50px; 
+    }
+}
+
+/*PC escritorio*/
+@media only screen and (min-width: 1025px) {
+    .banner {
+        height: 50vh; 
+    }
+
+    .banner h1 {
+        font-size: 100px; 
+    }
+}

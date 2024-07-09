@@ -1,0 +1,139 @@
+{% include 'admin/cabecera.html' %}
+<style>
+    .placeholder-black::placeholder {
+        /* color: black; */
+        font-weight: 500;
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px #B0AC98 inset !important;
+        -webkit-text-fill-color: black !important;
+    }
+</style>
+<script src="https://cdn.lordicon.com/lordicon-1.1.0.js"></script>
+<!-- Admin de libros -->
+<div class="mt-[60px] pb-1">
+    <p class="text-3xl font-">Libromania Administrador</p>
+</div>
+<!-- GIRE EL DISPOSITIVO -->
+<div class="lg:hidden block mx-auto">
+    <div class="flex flex-col items-center justify-between w-fit mx-auto">
+        <span class=" w-[16px] h-[16px]">
+            <lord-icon
+                src="https://cdn.lordicon.com/rqptwppx.json"
+                trigger="hover">
+            </lord-icon>
+        </span>
+        <p class="mt-5 text-[14px] font-medium px-2 mb-2 rounded-lg text-white bg-black">Gire el Disposivito para una mejor experiencia</p>
+    </div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="grid-container w-fit mx-auto bg-black text-white rounded-lg py-6">
+    <div class="flex flex-col">
+        <!-- AGREGAR -->
+        <div class="card w-full">
+            <div class="card-header w-fit mx-auto text-2xl pb-2">
+                <h3>Agregar del libro</h3>
+            </div>
+            <div class="py-1 w-full px-3">
+                <div class="border-2 border-[#B0AC98] rounded-lg w-fit mx-auto px-5 py-2">
+                    <form action="/admin/libros/guardar" method="post" enctype="multipart/form-data"
+                        class="md:flex lg:flex-row flex-col w-full justify-around gap-y-2 gap-x-12">
+                        <div class="flex flex-col gap-y-2">
+                            <label for="txtNombre">Nombre:</label>
+                            <input class="placeholder-black font-bold bg-[#B0AC98] text-black" type="text" name="txtNombre" id="txtNombre" placeholder="Escriba el nombre del libro" required>
+                        </div>
+                        <div class="flex flex-col gap-y-2">
+                            <label for="txtWHO">Autor - Año:</label>
+                            <input class="placeholder-black font-bold bg-[#B0AC98] text-black" type="text" name="txtWHO" id="txtWHO" placeholder="Escriba Autor - Año" required>
+                        </div>
+                        <div class="flex flex-col gap-y-2">
+                            <label for="txtImagen">Imagen:</label>
+                            <input class="text-white text-[12px]" type="file" name="txtImagen" id="txtImagen" placeholder="Seleccione la imagen" required>
+                        </div>
+                        <div class="flex flex-col items-center justify-end">
+                            <button type="submit" class="text-[15px] bg-blue-600 w-fit rounded-md py-1 px-2 mt-1 text-white">Agregar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- MENSAJE DE LIMITE -->
+        <div class="w-fit mx-auto flex flex-col items-center justify-center">
+            <div class="">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <p class="flash-messages text-red-500">
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                        </p>
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <p class="text-2xl pt-8 pb-2">Libros:</p>
+            <div class="lg:hidden">
+                <lord-icon
+                    src="https://cdn.lordicon.com/axacjdbs.json"
+                    trigger="in"
+                    delay="1000"
+                    state="in-reveal"
+                    style="width:50px;height:50px">
+                </lord-icon>
+            </div>
+        </div>
+        <!-- TABLA -->
+        <div class="sm:pt-6 px-12 max-w-[90vw]">
+            <div class="overflow-x-auto">
+                <table class="min-w-full mx-auto">
+                    <thead>
+                        <tr>
+                            <th class="px-1">ID</th>
+                            <th class="px-1">Nombre</th>
+                            <th class="px-1">Imagen</th>
+                            <th class="px-1">Autor - Año</th>
+                            <th class="px-1">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for libro in libros %}
+                        <tr>
+                            <td class="px-2 py-2">{{ libro[0] }}</td>
+                            <td class="px-2 py-2">{{ libro[1] }}</td>
+                            <td class="px-4 py-2">
+                                <div class="flex items-center gap-x-4">
+                                    <img class="w-[50px]" src="/img/{{ libro[2] }}" alt="">
+                                    <p class="sm:max-w-[180px] max-w-[100px] break-words px-2">{{ libro[2] }}</p>
+                                </div>
+                            </td>
+                            <td class="px-12 py-2 ">{{ libro[3] }}</td>
+                            <td class="px-2 py-2">
+                                <div class="flex items-center justify-end gap-x-4">
+                                    <div>
+                                        <a href="/admin/libros/editar/{{ libro[0] }}" class="bg-blue-600 w-auto rounded-md py-1 px-2 text-white">Editar</a>
+                                    </div>
+                                    <div>
+                                        <form action="/admin/libros/borrar" method="POST" class="">
+                                            <input class="text-black w-4 hidden" value="{{ libro[0] }}" type="text" name="txtID" id="txtID">
+                                            <button type="submit" class="bg-red-600 w-auto rounded-md py-1 px-2 text-white">
+                                                Eliminar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SEPARADOR -->
+<div class="mt-12">
+    <p class="text-transparent hidden">Separador</p>
+</div>
+{% include 'admin/pie.html' %}

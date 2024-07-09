@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3edbfb76e6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/img/librooo.ico">
+    <title>Administrador | Libromania</title>
+</head>
+    <style>
+        html {
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+            scroll-behavior: smooth;
+        }
+        .back-design {
+            background: linear-gradient(60deg, rgb(224, 216, 176), #333);
+            filter: brightness(0.9);
+        }
+        .jober {
+            display: inline-block;
+            position: relative;
+            color: black;
+        }
+        .jober span {
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+        .jober:hover span {
+            width: 100%;
+        }
+    </style>
+<body class="back-design min-h-screen  flex flex-col items-center justify-center relative px-2">
+    <nav class="navbar w-full  py-5 absolute top-0 flex justify-between px-3">
+        <div class="nav flex gap-x-4 font-bold uppercase text-sm">
+            <a href="/admin/" class="active jober">Inicio <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span></a>
+            <a href="/admin/libros" class=" jober">Libros <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span></a>
+            <a href="/" class=" jober">Sitio Web <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span></a>
+        </div>
+        <div class="font-medium uppercase text-sm text-white pr-5">
+            <a href="/admin/logout" class="jober" style="color: #fff!important;">Cerrar Sesion <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span></a>
+        </div>
+    </nav>
+    
+    

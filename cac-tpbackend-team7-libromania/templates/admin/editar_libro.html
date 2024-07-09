@@ -1,0 +1,60 @@
+{% include 'admin/cabecera.html' %}
+    <!-- <h1>Editar Libro</h1>
+    <form action="/admin/libros/actualizar" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="txtID" value="{{ libro[0] }}">
+
+        <label for="txtNombre">Nombre:</label>
+        <input type="text" name="txtNombre" value="{{ libro[1] }}" required>
+
+        <br>
+
+        <label for="txtURL">URL:</label>
+        <input type="text" name="txtURL" value="{{ libro[3] }}" required>
+
+        <br>
+
+        <label for="txtImagen">Imagen:</label>
+        <input type="file" name="txtImagen">
+
+        <br>
+        <button type="submit">Actualizar</button>
+    </form> -->
+<!--  -->
+<div class="mt-[20px] pb-6">
+    <p class="text-3xl font-medium">Libromania Administrador</p>
+</div>
+<!-- LOG IN -->
+<div class="w-[30%] mx-auto bg-black rounded-lg py-5 px-10">
+    <div class="">
+        <div class="">
+            <p class="text-white font-medium text-xl">Editar Libro</p>
+        </div>
+        <div>
+            <form action="/admin/libros/actualizar" method="post" enctype="multipart/form-data" class="flex flex-col gap-y-6">
+                <!-- NOMBRE -->
+                <div class="flex flex-col gap-y-1 pt-5 ">
+                    <input type="hidden" name="txtID" value="{{ libro[0] }}">
+                    <label for="txtNombre" name="txtNombre" class="text-white">Nombre:</label>
+                    <input class="placeholder-black rounded-sm p-2 font-bold text-[17px] bg-[#B0AC98]" type="text" name="txtNombre" value="{{ libro[1] }}" placeholder="Escriba nuevo nombre">
+                </div>
+                <!-- AUTOR - AÑO -->
+                <div class="flex flex-col gap-y-1 pt-5 ">
+                    <label for="txtWHO" class="text-white">Autor - Año:</label>
+                    <input class="placeholder-black rounded-sm p-2 font-bold text-[17px] bg-[#B0AC98]" type="text" name="txtWHO" value="{{ libro[3] }}" placeholder="Escriba nuevo Autor - Año">
+                </div>
+                <!-- IMAGEN -->
+                <div class="flex flex-col gap-y-1 ">
+                    <label for="txtImagen" class="text-white">Imagen:</label>
+                    <div class="relative flex w-full">
+                        <input type="file" name="txtImagen" class="text-white text-[15px]">
+                    </div>
+                </div>
+                <!-- BOTON ENTRAR-->
+                <div class="pb-3">
+                    <button type="submit" class="bg-[#B0AC98] w-fit text-black pt-1 pb-2 px-2 rounded-md font-bold hover:bg-[#989481]">Actualizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% include 'admin/pie.html' %}

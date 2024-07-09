@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libromania</title>
+
+    <!--Favicon + GoogleFonts-->
+    <link rel="icon" href="assets/img/librooo.ico">
+    <script src="https://kit.fontawesome.com/3edbfb76e6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15+Charted&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="./assets/css/universal.css"> <!-- Configuracion universal -->
+
+    <link rel="stylesheet" href="./assets/css/index-main.css"> <!--Estructura Index-->
+    <link rel="stylesheet" href="./assets/css/background.css"> <!-- Fondo de pagina-->
+    <link rel="stylesheet" href="./assets/css/barra-navegacion.css"> <!-- Barra de navegacion + Botones -->
+    <link rel="stylesheet" href="./assets/css/banner.css"> <!-- Banner -->
+    <link rel="stylesheet" href="./assets/css/index-card-libros.css"> <!-- Estilo tarjeta catalogo-->
+    <link rel="stylesheet" href="./assets/css/footer-web.css"> <!-- Footer de la web -->
+    <link rel="stylesheet" href="./assets/css/footercac.css"> <!-- Footer CaC / TP -->
+
+    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css"> <!-- Bootstrap -->
+</head>
+
+<body class="back-design">
+    <nav id="nav-bar"> <!-- Barra de navegacion -->
+        <div class="bar">
+            <div>
+                <i class="fa-solid fa-book-open fa-bounce"></i>
+                <span>Libromania</span>
+            </div>
+
+            <ul>
+                <li><a class="bar-btn" href="#banner">Volver arriba</a></li>
+                <li><a class="bar-btn" href="#catalogo">Catalogo</a></li>
+                <li><a class="bar-btn" href="#clientes">Autores en foco</a></li>
+                <li><a class="bar-btn" href="#contacto">Publica con nosotros</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <section id="banner" class="banner"><!-- Banner web -->
+            <h1>"No se puede abrir un libro sin aprender algo"</h1>
+        </section>
+    </header>
+
+    <main>
+
+        <section id="catalogo"><!--El catalogo se particiona en dos para facilitar manipulacion-->
+            <div class="text-content">
+                <h2>Libromania: Explorando Nuestro Mundo de Creatividad Impresa</h2>
+                <p>
+                    Bienvenido a nuestro catálogo de edición limitada, donde las palabras toman vida en papel.
+                    <br>Desde libros cautivadores hasta revistas inspiradoras, cada publicación es una obra de arte en
+                    sí misma.
+                    <br>Descubre la magia de la impresión mientras exploras nuestra colección única de proyectos
+                    editoriales.
+                </p>
+            </div>
+
+            <div class="cards-catalogo"> <!-- Scrip catalogo -->
+            </div>
+        </section>
+
+        <section id="clientes">
+            <div class="text-content">
+                <h2>Autores en Foco</h2>
+                <p>
+                    Descubre las mentes detrás de las palabras en nuestra sección de "Rostros Creativos".
+                    <br>Aquí, celebramos a los talentosos autores que dan vida a nuestras páginas con sus historias
+                    cautivadoras y sus ideas inspiradoras.
+                </p>
+            </div>
+
+            <div id="clientes-carousel"> <!--Script carousel-->
+            </div>
+
+        </section>
+
+        <section id="contacto">
+            <img src="./assets/img/edificio.png" alt="sede">
+            <div class="text-content">
+                <h2>Publica con nosotros</h2>
+                <p>
+                    ¡Únete a la Aventura Editorial!
+                    <br>¿Tienes una historia que contar, una idea que compartir o un mensaje que transmitir?
+                    <br>Nuestro equipo editorial está listo para acompañarte en cada paso del proceso de publicación.
+                    <br>Ya sea que seas un autor debutante o un veterano experimentado, valoramos cada voz y cada
+                    visión.
+                </p>
+                <a href="./pages/registro.html" class="btn-registro text decoration-none">¡Estamos aquí para ti!</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer-bar" class="bar"><!--Footer web-->
+            <div>
+                <i class="fa-solid fa-book-open fa-bounce"></i>
+                <span>Libromania</span>
+            </div>
+
+            <ul>
+                <li><a class="bar-btn" href="#banner">Volver arriba</a></li>
+            </ul>
+        </div>
+
+        <div id="cac" class="footercac text-footer"><!--Footer para el curso-->
+            <div id="cac1">
+                <h1 style="text-align: center;">Pagina con fines educativos <br> y de formacion.</h1>
+                <img src="./assets/img/languages.png" alt="html js css">
+            </div>
+            <div id="cac2">
+                <h1>Realizada por - grupo 7:</h1>
+                <ul>
+                    <li>Dario Bristot</li>
+                    <li>Rocio Gervasoni</li>
+                    <li>Maria Paz Visintin</li>
+                    <li>Giuliano Ivan Veliz</li>
+                </ul>
+            </div>
+
+            <div id="cac3">
+                <a href="https://buenosaires.gob.ar/educacion/codo-codo-40">
+                    <img src="./assets/img/CAClogo.png" alt="codo a codo logo">
+                </a>
+            </div>
+
+            <div id="cac4">
+                <p><br>Pagina con licencia GPL 3.0 para mas informacion <a
+                        href="https://www.gnu.org/licenses/gpl-3.0.html">click
+                        aqui</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<!-- Scripts -->
+<script src="./assets/js/Index-Auto-Catalogo.js"></script> <!-- Insercion card -->
+<script src="./assets/js/Index-Auto-Carousel.js"></script> <!-- Insercion carousel -->
+<!-- Boostrap -->
+<script src="./assets/bootstrap/bootstrap.min.js"></script>

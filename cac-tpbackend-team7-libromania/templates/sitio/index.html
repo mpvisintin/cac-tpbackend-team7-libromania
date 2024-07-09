@@ -1,0 +1,801 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/3edbfb76e6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15+Charted&family=Shadows+Into+Light&display=swap"rel="stylesheet">
+    <link rel="icon" href="/img/librooo.ico">
+    <title>Libromania</title>
+</head>
+<style>
+    /* html, body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        scroll-behavior: smooth;
+    } */
+     html{
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        scroll-behavior: smooth;
+     }
+    .backImage {
+        background-image: url(img/books.png);
+        background-size: cover; /* Para ajustar la imagen al contenedor */
+        background-position: center; /* Para centrar la imagen */
+        height: 500px; /* Ajusta según tus necesidades */
+        font-family: "Shadows Into Light", cursive;
+    }
+    .fuente{
+        font-family: "Shadows Into Light", cursive;
+    }
+    .back-design{
+        background: linear-gradient(60deg,rgb(224, 216, 176),#333);
+        /* background: red; */
+        filter: brightness(0.9);
+    }
+    .jober {
+        display: inline-block; /* Hace que los enlaces se comporten como elementos en línea */
+        position: relative; /* Para posicionar correctamente el span de subrayado */
+        color: #fff; /* Color de texto blanco */
+    }
+
+    .jober span {
+        position: absolute; /* Posiciona el subrayado de forma absoluta dentro del enlace */
+        left: 0; /* Inicia desde la izquierda */
+        bottom: -2px; /* Coloca el subrayado debajo del texto */
+        width: 0; /* Inicialmente sin ancho */
+        height: 2px; /* Altura del subrayado */
+        background-color: #fff; /* Color rojo */
+        transition: width 0.3s ease; /* Transición suave del ancho */
+    }
+
+    .jober:hover span {
+        width: 100%; /* Se extiende al ancho completo al hacer hover */
+    }
+
+    a {
+    text-decoration: none;
+    }
+    .carusel{
+        width: 100%;
+        margin: 0px 0px;
+    }
+    @media(min-width:768px){
+        .carusel{
+            margin:0px;
+        }
+    }
+    .carusel h2 {
+        font-size: 45px;
+        line-height: 38px;
+        padding-bottom: 50px;
+        opacity: .9;
+        text-transform: uppercase;
+        font-weight: 600;
+        text-align: center;
+        color: #fff;
+    }
+    .carrusel-list{
+        position: relative;
+        display: flex;
+        align-items: center;
+        /* width: fit-content;
+        height: 304px; */
+        padding: 10px 0px;
+        margin: 0 auto;
+        width: 90vw;
+        overflow: hidden;
+        /* height: 95vh; */
+        /* background-color:aqua; */
+    }
+    .carrusel-track{
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        transition: .5s ease-in-out;
+        /* background-color: red; */
+    }
+    .carrusel{
+        position: relative;
+        width: 90vw;
+        padding: 0 18px;
+        /* float: left; */
+        box-sizing: border-box;
+        display: flex;
+        height: 100%;
+    }
+    .carrusel h4{
+        position: absolute;
+        z-index: 1;
+        font-size: 22px;
+        line-height: 23px;
+        color: #fff;
+        padding: 15px;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 1); /* Sombra más fuerte */
+        /* bottom: 0;
+        text-align: center;
+        left: 14% */
+    }
+    .carrusel h4 small{
+        font-size: 15px;
+        display: block;
+    }
+    .carrusel a{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: end;
+        padding-left: 20px;
+        padding-left: 20px;
+    }
+    .carrusel a img {
+        object-fit: cover;
+        /* height: 300px; */
+        /* width: 200px; */
+        width: 100vw;
+        border-radius: 15px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+        transition: .3s ease-in-out;
+    }
+    @media (max-width: 400px) {
+        /* asdasd */
+        .carusel{
+            width: 100%;
+            margin: 0px 0px;
+        }
+        @media(min-width:768px){
+            .carusel{
+                margin:0px;
+            }
+        }
+        .carusel h2 {
+            font-size: 45px;
+            line-height: 38px;
+            padding-bottom: 50px;
+            opacity: .9;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-align: center;
+            color: #fff;
+        }
+        .carrusel-list{
+            position: relative;
+            display: flex;
+            align-items: center;
+            /* width: fit-content;
+            height: 304px; */
+            padding: 10px 0px;
+            margin: 0 auto;
+            width: 100vw;
+            overflow: hidden;
+            /* height: 95vh; */
+            /* background-color:aqua; */
+        }
+        .carrusel-track{
+            position: relative;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            transition: .5s ease-in-out;
+            /* background-color: red; */
+        }
+        .carrusel{
+            position: relative;
+            width: 100vw;
+            padding: 0 18px;
+            /* float: left; */
+            box-sizing: border-box;
+            display: flex;
+            height: 100%;
+        }
+        .carrusel h4{
+            position: absolute;
+            z-index: 1;
+            font-size: 18px;
+            line-height: 23px;
+            color: #fff;
+            padding-top: 0px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 1); /* Sombra más fuerte */
+            /* bottom: 0;
+            text-align: center;
+            left: 14% */
+        }
+        .carrusel h4 small{
+            font-size: 15px;
+            display: block;
+        }
+        .carrusel a{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: end;
+            padding-left: 20px;
+            padding-left: 20px;
+        }
+        .carrusel a img {
+            object-fit: cover;
+            /* height: 300px; */
+            /* width: 200px; */
+            width: 100vw;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+            transition: .3s ease-in-out;
+        }
+        /* asdasd */
+    }
+    @media(min-width:768){
+        .carrusel{
+            width: 275px;
+        }
+        .carusel a img {
+            width: 250px;
+        }
+    }
+    .carrusel-arrow{
+        border-radius: 30px;
+        background-color: black;
+        position: absolute;
+        z-index: 4;
+        width: 48px;
+        height: 48px;
+        text-align: center;
+        border: 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+    }
+    .carrusel-arrow:focus{
+        outline: 0;
+    }
+    .carrusel-arrow svg{
+        width: 15px;
+        height: 100%;
+        color: white;
+    }
+    .carrusel-prev{
+        left: 15px;
+    }
+    .carrusel-next{
+        right: 0;
+    }
+    /* footer */
+    /*Grillado y areas por separado*/
+
+.footercac {
+    display: grid;
+    grid-template-columns: 0.3fr 0.3fr 0.2fr 0.2fr;
+    grid-template-rows: 150px auto;
+    grid-template-areas:
+        "cac1 cac2 cac3 cac3"
+        "cac4 cac4 cac4 cac4";
+}
+
+#cac1 {
+    grid-area: cac1;
+}
+
+#cac2 {
+    grid-area: cac2;
+}
+
+#cac3 {
+    grid-area: cac3;
+}
+
+#cac4 {
+    grid-area: cac4;
+}
+
+/*-------------*/
+.footercac {
+    color: white;
+    background-color: #333;
+    margin: 0;
+    border-top: 2px solid red;
+}
+
+#cac1 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cac1 div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+    list-style-type: none;
+}
+
+#cac1 img {
+    margin: 5px 12px 12px 10px;
+    width: 100%;
+    height: 50%;
+}
+
+#cac2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+#cac2 ul {
+    list-style-type: none;
+    /* Quita los puntos de la lista */
+    margin: 10px;
+}
+
+#cac3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cac3 img {
+    width: 100%;
+    height: 100px;
+}
+
+#cac4 {
+    margin: 5px 0;
+    border-top: 2px solid red;
+}
+
+/*-------------*/
+
+.text-footer h1 {
+    font-size: 18px;
+}
+
+.text-footer li,
+p {
+    font-size: 16px;
+    margin: 2px;
+}
+
+
+/*----------------------------------*/
+/*Medias*/
+/*----------------------------------*/
+
+/*PC Escritorio*/
+@media only screen and (height: 1025px) {
+    .footercac {
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr;
+        grid-template-rows: 100px 100px 50px;
+        grid-template-areas:
+            "cac1 cac1"
+            "cac2 cac3"
+            "cac4 cac4";
+    }
+
+    #cac1 img {
+        margin: 2px 0 5px 0;
+        width: 100%;
+        height: 50%;
+    }
+
+
+    #cac3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #cac3 img {
+        margin: 0px 0px 2px 0px;
+        height: 90%;
+    }
+
+    #cac2,
+    #cac3 {
+        border-top: 2px solid red;
+    }
+
+    .text-footer h1 {
+        font-size: 14px;
+    }
+
+    .text-footer li,
+    p {
+        font-size: 12px;
+    }
+
+}
+
+/*Dispositivos móviles*/
+@media screen and (max-width: 600px) {
+    .footercac {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "cac1"
+            "cac2"
+            "cac3"
+            "cac4";
+    }
+
+    #cac1,
+    #cac2,
+    #cac3,
+    #cac4 {
+        margin-top: 10px;
+    }
+
+    #cac1 div {
+        flex-direction: column;
+    }
+
+    #cac1 img,
+    #cac3 img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+/* Media queries para tabletas */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .footercac {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "cac1 cac2"
+            "cac3 cac3"
+            "cac4 cac4";
+    }
+
+    #cac1,
+    #cac2,
+    #cac3,
+    #cac4 {
+        margin-top: 10px;
+    }
+
+    #cac1 div {
+        flex-direction: column;
+    }
+
+    #cac1 img,
+    #cac3 img {
+        width: 90%;
+        height: auto;
+    }
+}
+.sticky {
+    position: sticky;
+    top: 0; /* Ajusta el punto de anclaje según sea necesario */
+    z-index: 1000; /* Opcional: ajusta el z-index si es necesario */
+    background-color: #333; /* Opcional: ajusta el color de fondo */
+}
+.text-shadow{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+.text-shadow-xl{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+}
+</style>
+<body class="back-design ">
+    <!-- NAV -->
+    <nav class="sticky bg-[#333] w-screen text-white sticky top-0 z-50">
+        <!-- MENU -->
+        <div class="w-screen px-4 py-3 flex justify-between items-center">
+            <!-- LOGO -->
+            <div class="flex gap-x-4 items-center w-fit">
+                <i class="fa-solid fa-book-open"></i>
+                <p class="text-xl font-bold">Libromania</p>
+            </div>
+            <!-- LINKS -->
+            <div class="font-medium text-[14px] md:flex hidden gap-x-4 items-center w-fit mr-5 uppercase">
+                <a href="/" class="jober md:block hidden">
+                    Inicio
+                    <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span>
+                </a>
+                <a href="#catalogo" class="jober md:block hidden">
+                    Catálogo
+                    <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span>
+                </a>
+                <a href="#slider" class="jober md:block hidden">
+                    Autores en Foco
+                    <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span>
+                </a>
+                <a href="#publica" class="jober md:block hidden">
+                    Publica con Nosotros
+                    <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span>
+                </a>
+                <a href="/registro" class="jober md:block hidden">
+                    Registrate
+                    <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all"></span>
+                </a>
+            </div>
+            <!-- BOTON MENU -->
+            <div class="flex md:hidden mr-2">
+                <!-- Botón de menú para dispositivos móviles -->
+                <button id="mobile-menu-btn" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- MENU RESP -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Inicio</a>
+                <a href="#catalogo" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Catálogo</a>
+                <a href="#slider" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Autores en Foco</a>
+                <a href="#publica" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Publica con Nosotros</a>
+                <a href="/registro" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Registrate</a>
+            </div>
+        </div>
+    </nav>
+    <!-- BANNER -->
+    <section id="banner">
+        <div class="backImage flex items-center justify-center">
+            <h1 class="px-12 text-center text-white text-shadow
+            md:bg-transparent bg-black 
+            bg-opacity-50
+            md:text-8xl text-4xl
+            md:font-medium font-black">"No se puede abrir un libro sin aprender algo"</h1>
+        </div>
+    </section>
+    <!-- CATALOGO -->
+    <section id="catalogo" class="border-t-4 border-t-gray-400">
+        <div>
+            <div class="flex flex-col gap-y-2 w-fit mx-auto text-center mt-2 font-medium italic px-5">
+                <h3 class="md:text-[32px] font-bold text-[22px] text-[#212529]">Libromania: Explorando Nuestro Mundo de Creatividad Impresa</h3>
+                <p class="md:text-2xl">Bienvenido a nuestro catálogo de edición limitada, donde las palabras toman vida en papel.</p>
+                <p class="md:text-2xl">Desde libros cautivadores hasta revistas inspiradoras, cada publicación es una obra de arte en sí misma.</p>
+                <p class="md:text-2xl">Descubre la magia de la impresión mientras exploras nuestra colección única de proyectos editoriales.</p>
+            </div>
+            <!-- tarjetero dinamico grid o flex -->
+            <!-- <div class="bookContentor mt-[50px] w-[96%] mx-auto grid gap-4 
+            xl:grid-cols-6 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2"> -->
+            <div class="bookContentor mt-[50px] mx-auto justify-center
+                sm:w-[90vw] w-[95vw] 
+                md:flex flex-wrap grid grid-cols-2 
+                sm:gap-4 gap-2">
+                {% for libro in libros %}
+                <div class="books rounded-lg mx-auto">
+                    <div class="card border-2 border-gray-400 shadow-md rounded-[10px] sm:w-[230px] w-[170px]">
+                        <div class="bg-[#212529] py-3 text-center rounded-t-lg">
+                            <p class="sm:text-[16px] text-[12px] text-white">{{ libro[1] }}</p>
+                        </div>
+
+                        <img class="h-[216px] w-full sm:object-fill object-cover p-1 rounded-lg" src="/img/{{ libro[2] }}" alt="">
+
+                        <div class="bg-[#212529] py-3 text-center rounded-b-lg">
+                            <p class="sm:text-[16px] text-[12px] text-white px-1">{{ libro[3] }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- CARRUSEL -->
+    <section id="slider" class="border-t-2 border-t-white mt-6">
+        <div>
+            <div class="flex flex-col gap-y-2 w-fit mx-auto text-center mt-2 font-medium italic px-5">
+                <h3 class="md:text-[32px] text-[22px] text-[#212529]">Autores en Foco</h3>
+                <p class="md:text-2xl">Descubre las mentes detrás de las palabras en nuestra sección de "Rostros Creativos".</p>
+                <p class="md:text-2xl">Aquí, celebramos a los talentosos autores que dan vida a nuestras páginas con sus historias cautivadoras y sus ideas inspiradoras.</p>
+            </div>
+        </div>
+        <div class="">
+            <div class="carusel">
+        
+                <div class="carrusel-list" id="carrusel-list">
+                    <button class="carrusel-arrow carrusel-prev" id="button-prev" data-button="button-prev"
+                        onclick="app.processingButton(event)">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
+                            class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 320 512">
+                            <path fill="currentColor"
+                                d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
+                            </path>
+                        </svg>
+                    </button>
+        
+                    <div class="carrusel-track" id="track">
+        
+                        <div class="carrusel rounded-md">
+        
+                            <a href="#" class="pointer-events-none">
+                                <h4 class="max-w-[80%] bg-black bg-opacity-50">
+                                    Fernando Sendra
+                                    <p class="sm:pt-1 sm:text-base text-[12px] sm:leading-normal leading-[15px]">Escritor, humorista gráfico, dibujante, guionista y historietista argentino. Su personaje más conocido es Matías, el principal de la tira Yo, Matías.</p>
+                                </h4>
+                                <picture>
+                                    <img src="img/otro.jpg" alt="">
+                                </picture>
+                            </a>
+        
+                        </div>
+        
+                        <div class="carrusel">
+        
+                            <a href="#" class="pointer-events-none">
+                                <h4 class="text-shadow-xl max-w-[80%] sm:bg-black bg-transparent  sm:bg-opacity-50">
+                                    Dmitri Glukhovsky
+                                    <p class="text-shadow sm:pt-1 sm:text-base text-[9px] sm:leading-normal sm:leading-[15px] leading-[12px]">Escritor y periodista ruso conocido por el éxito de la novela de ciencia ficción y fantasía post-apocalíptica Metro 2033 y sus secuelas. El éxito de su primera novela ha dado origen a una franquicia conocida como Metro (Метро) popular en diversos géneros como novelas o videojuegos y en muchos países.</p>
+                                </h4>
+                                <picture>
+                                    <img src="img/2-dmitry-glukhovsky.jpg" alt="">
+                                </picture>
+                            </a>
+        
+                        </div>
+                        <div class="carrusel">
+        
+                            <a href="#" class="pointer-events-none">
+                                <h4 class="max-w-[80%] bg-black bg-opacity-50">
+                                    Angélica Gorodischer
+                                    <p class="sm:pt-1 sm:text-base text-[9px] sm:leading-normal sm:leading-[15px] leading-[12px]">Escritora argentina, ha publicado su primer obra "Opus Dos" con nuestra editorial. Sus narraciones integran antologías de distintos países y publica en diarios y revistas de distintas latitudes.</p>
+                                </h4>
+                                <picture>
+                                    <img src="img/3-angelica-gorodischer.jpg" alt="">
+                                </picture>
+                            </a>
+        
+                        </div>
+                
+                    </div>
+        
+                    <button class="carrusel-arrow carrusel-next" id="button-next" data-button="button-next"
+                        onclick="app.processingButton(event)">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+                            class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 320 512">
+                            <path fill="currentColor"
+                                d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PUBLICA CON NOSOTROS -->
+    <section id="publica" class="flex xl:flex-row flex-col py-12 justify-center items-center">
+        <!-- imagen -->
+        <div class="sm:pl-12 pl-0">
+            <img src="img/edificio.png" class="rounded-lg" alt="sede">
+        </div>
+        <!-- texto -->
+        <div class="text-center w-fit justify-center gap-y-2 italic font-medium px-5 pt-6
+            flex 
+            md:flex  
+            xl:w-[50%] w-[90%]">
+            <div class="flex flex-col">
+                <h2 class="md:text-[32px] font-bold text-[22px] text-[#212529]">Registrate y publica con nosotros</h2>
+                <p class="md:text-2xl">
+                    ¡Únete a la Aventura Editorial!
+                    <br>¿Tienes una historia que contar, una idea que compartir o un mensaje que transmitir?
+                    <br>Nuestro equipo editorial está listo para acompañarte en cada paso del proceso de publicación.
+                    <br>Ya sea que seas un autor debutante o un veterano experimentado, valoramos cada voz y cada
+                    visión.
+                </p>
+                <div class="mt-4">
+                    <a href="./pages/registro.html" class="hover:bg-black bg-[#333] w-fit text-white pt-1 pb-2 px-2 rounded-md">¡Registrate!</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="text-white bg-[#333]">
+        <div id="footer-bar" class="bar flex justify-between w-full"><!--Footer web-->
+            <div class="flex ml-5 gap-x-7 items-center py-3">
+                <i class="fa-solid fa-book-open"></i>
+                <p>Libromania</p>
+            </div>
+            <div class="mr-5 flex items-center">
+                <ul>
+                    <li>
+                        <a class="bg-black hover:text-white text-black hover:bg-black font-bold w-fit text-white  pb-1 px-2 rounded-md" href="#banner" >Volver arriba
+                            <span class="absolute inset-x-0 bottom-0 h-1 bg-transparent transition-all"></span>
+                        </a>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="cac" class="footercac text-footer"><!--Footer para el curso-->
+            <div id="cac1">
+                <h1 style="text-align: center;">Pagina con fines educativos <br> y de formacion.</h1>
+                <img src="img/languages.png" alt="html js css">
+            </div>
+            <div id="cac2" class="pt-5">
+                <h1>Realizada por - grupo 7:</h1>
+                <ul>
+                    <li>Rocio Gervasoni</li>
+                    <li>Sergio Ramos</li>
+                    <li>Maria Paz Visintin</li>
+                    <li>Giuliano Ivan Veliz</li>
+                </ul>
+            </div>
+
+            <div id="cac3" class="">
+                <a href="https://buenosaires.gob.ar/educacion/codo-codo-40" class="">
+                    <img src="img/CAClogo.png" class="w-[50%] mx-auto" alt="codo a codo logo">
+                </a>
+            </div>
+
+            <div id="cac4" class="sm:text-left text-center">
+                <p class="sm:ml-5">
+                    <br>Pagina con licencia GPL 3.0 para mas informacion
+                    <a class="text-blue-500 underline" href="https://www.gnu.org/licenses/gpl-3.0.html">click
+                    aqui</a>
+                </p>
+            </div>
+        </div>
+        <div class="administrador w-fit mx-auto">
+            <a href="../admin/" class="text-blue-500 underline" target="_blank">Administrador</a>
+        </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <script>
+        /* CARRUSEL */
+        function App() {}
+        window.onload = function (event) {
+            let app = new App();
+            window.app = app;
+        };
+
+        App.prototype.processingButton = function (event) {
+            const btn = event.currentTarget;
+            const carruselList = event.currentTarget.parentNode;
+            const track = carruselList.querySelector('#track');
+            const carrusel = track.querySelectorAll('.carrusel');
+
+            const carruselWidth = carrusel[0].offsetWidth;
+            const trackWidth = track.offsetWidth;
+            const listWidth = carruselList.offsetWidth;
+
+            let leftPosition = track.style.left === "" ? 0 : parseFloat(track.style.left.slice(0, -2) * -1);
+            btn.dataset.button == "button-prev" ? prevAction(leftPosition, carruselWidth, track) : nextAction(leftPosition, trackWidth, listWidth, carruselWidth, track);
+        };
+
+        let prevAction = (leftPosition, carruselWidth, track) => {
+            if (leftPosition > 0) {
+                track.style.left = `${-1 * (leftPosition - carruselWidth)}px`;
+            }
+        };
+
+        let nextAction = (leftPosition, trackWidth, listWidth, carruselWidth, track) => {
+            // Calcular hasta dónde debe avanzar el carrusel
+            const maxLeftPosition = trackWidth - listWidth;
+
+            // Verificar si ya está en la última posición
+            if (leftPosition < maxLeftPosition) {
+                // Ajustar la posición para que no pase del límite
+                const newLeftPosition = Math.min(leftPosition + carruselWidth, maxLeftPosition);
+                track.style.left = `${-newLeftPosition}px`;
+            }
+        };
+        /* resp nav */
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+            // ocultar menu
+            document.querySelector('.hidden.md\\:flex').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

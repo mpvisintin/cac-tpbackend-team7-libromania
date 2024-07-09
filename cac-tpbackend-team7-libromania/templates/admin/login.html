@@ -1,0 +1,58 @@
+{% include 'admin/cabecera.html' %}
+    
+<!-- Login de usuario -->
+ <style>
+    .placeholder-black::placeholder {
+      color: black;
+      font-weight: 500;
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px #B0AC98 inset !important;
+      -webkit-text-fill-color: black !important;
+    }
+ </style>
+    <div class="mt-[20px] pb-6">
+        <p class="text-3xl font-medium">Libromania Administrador</p>
+    </div>
+    <!-- LOG IN -->
+    <div class="w-[30%] mx-auto bg-black rounded-lg py-5 px-10">
+        <div class="">
+            <div class="">
+                <p class="text-white font-medium text-xl">Inicio de Sesion</p>
+            </div>
+            <div>
+                <form action="/admin/login" method="post" class="flex flex-col gap-y-6">
+                    <!-- USUARIO -->
+                    <div class="flex flex-col gap-y-1 pt-5 ">
+                        <label for="txtUsuario" class="text-white">Usuario:</label>
+                        <input class="placeholder-black rounded-sm p-2 font-bold text-[17px] bg-[#B0AC98]" type="text" name="txtUsuario" id="txtUsuario" aria-describedby="helpId" placeholder="Escriba su usuario" required>
+                    </div>
+                    <!-- PASSWORD -->
+                    <div class="flex flex-col gap-y-1 ">
+                        <label for="txtPassword" class="text-white">Contraseña:</label>
+                        <div class="relative flex w-full">
+                            <input id="txtPassword" name="txtPassword" type="password" placeholder="Escriba su contraseña" class="placeholder-black rounded-sm p-2 bg-[#B0AC98] w-full" required/>
+                            <!-- OJO -->
+                            <button type="button" onclick="togglePasswordVisibility()" class="absolute  right-2 top-2  h-fit  rounded-lg focus:outline-none">
+                                <i class="fa-solid fa-eye text-black"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- BOTON ENTRAR-->
+                    <div class="pb-3">
+                        <button type="submit" class="bg-[#B0AC98] w-fit text-black pt-1 pb-2 px-2 rounded-md font-bold hover:bg-[#989481]">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('txtPassword');
+            passwordInput.type = (passwordInput.type === 'password') ? 'text' : 'password';
+        }
+    </script>
+{% include 'admin/pie.html' %}

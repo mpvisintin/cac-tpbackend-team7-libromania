@@ -1,0 +1,196 @@
+/*Configuracion de tarjetas expositoras*/
+
+/*Tiene estilo aplica en section id="muestra-catalogo"*/
+/*Particion de 6 title 1/6, body  4/6 y foot 1/6 */
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0px;
+
+    width: 500px;
+    /* Ancho */
+    height: 320px;
+    /* Alto */
+
+    border: 1px solid black;
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background: none;
+    /*Fundamental para no solapar el fondo*/
+}
+
+/*----------------------------------*/
+/*Configuracion del titulo*/
+/*----------------------------------*/
+.card-title {
+    height: calc(320px/6);
+    /* Alto */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: rgb(40, 40, 40);
+    padding: 2px;
+    border-bottom: solid #363432;
+    border-radius: 10px 10px 0 0;
+    z-index: 2;
+}
+
+.card-title p {
+    text-align: center;
+    color: white;
+    /*Color de texto*/
+    font-size: 16px;
+    /* Titulo */
+    margin: 0;
+}
+
+/*----------------------------------*/
+/*Configuracion del cuerpo*/
+/*----------------------------------*/
+.card-body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: calc(320px*4/6)
+        /* Alto */
+}
+
+.card-body img {
+    /*Configuracion de imagen*/
+
+    width: 95%;
+    height: 95%;
+    padding: 0;
+    margin: 2px;
+    /*Solo para que no quede "compactada" la imagen*/
+    border-radius: 10px;
+    filter: brightness(80%);
+    z-index: 1;
+    /*Vamos a tapar el texto del parrafo*/
+    transition: opacity 3s ease-in-out;
+}
+
+.card-body img:hover {
+    /*Agregamos una transicion*/
+    opacity: 0.9;
+    /*Mandamos atras del texto y agregamos transparencia*/
+    background-color: antiquewhite;
+    z-index: 0;
+}
+
+/*----------------------------------*/
+/*Configuracion del pie*/
+/*----------------------------------*/
+.card-foot {
+    background-color: rgb(40, 40, 40);
+    position: relative;
+    padding: 2px;
+    margin: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: solid #1b1917;
+    border-radius: 10px;
+    bottom: 0px;
+
+    height: calc(320px/6);
+    /* Alto */
+    z-index: 2;
+
+}
+
+.card-foot p {
+    text-align: center;
+    color: white;
+    font-size: var(--pie-size);
+    margin: 2px;
+}
+
+/*----------------------------------*/
+/*Medias*/
+/*----------------------------------*/
+
+/*PC escritorio*/
+@media screen and (min-width: 1025px) {
+    .card-container {
+        width: 500px;
+        height: 320px;
+    }
+
+    .card-title {
+        height: calc(320px / 6);
+    }
+
+    .card-title p {
+        font-size: 16px;
+    }
+
+    .card-body {
+        height: calc(320px * 4 / 6);
+    }
+
+    .card-body img {
+        width: 95%;
+        height: 95%;
+    }
+
+    .card-foot {
+        height: calc(320px / 6);
+    }
+
+    .card-foot p {
+        font-size: var(--pie-size);
+    }
+}
+
+/*Dispositivos móviles*/
+@media screen and (max-width: 600px) {
+    .card-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-title p {
+        font-size: 14px;
+    }
+
+    .card-body img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-foot p {
+        font-size: 12px;
+    }
+}
+
+/*Tabletas*/
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .card-container {
+        width: 80%;
+        height: auto;
+    }
+
+    .card-title p {
+        font-size: 15px;
+    }
+
+    .card-body img {
+        width: 90%;
+        height: auto;
+    }
+
+    .card-foot p {
+        font-size: 13px;
+    }
+}
